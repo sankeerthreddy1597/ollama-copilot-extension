@@ -12,12 +12,21 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "ollama-copilot.helloWorld",
-        "title": "Hello World"
+    "configuration":{
+      "properties": {
+        "ollamaCopilot.model": {
+        "type": "string",
+        "description": "Name of the local Ollama model to use",
+        "default": "llama3.2"
       }
-    ]
+      }
+    },
+    "commands": [
+    {
+      "command": "ollamaCopilot.suggest",
+      "title": "Ollama Copilot: Generate Code"
+    }
+  ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
